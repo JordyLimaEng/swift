@@ -44,3 +44,41 @@ for impar in imparesMutaveis {
 for i in 0 ..< imparesMutaveis.count {
     print(imparesMutaveis[i])
 }
+
+//uso de v.map() que recebe uma função como parâmetro e executa para cada elemento
+let vetor = [2,4,8,10]
+
+func duplicador(i: Int) -> Int{
+	return i*2
+}
+
+let vetor_2 = vetor.map(duplicador)
+
+print(vetor)
+print(vetor_2)
+
+//método filter que aplica um filtro nos elementos do array
+let nums = [1,4,10,15]
+let filtrado = nums.filter { $0 % 2 == 0 }
+print(filtrado)
+
+//métrodo reduce que pega os elementos do vetor e combina(soma) com um valor inicial
+let itens = [2.0,4.0,5.0,7.0]
+let total = itens.reduce(10.0, +)
+print(total)
+
+//Também utilizado para concatenar strings
+let c = ["abc","def","ghi"]
+let texto = c.reduce("", +)
+print(texto)
+
+//é possível utilizar mais de um método em uma manipulação de array
+let nums2 = [4,5,8,2,9,7]
+let res = nums2.filter{$0 >= 7}.reduce(0, +)
+print(res)
+
+let nums3 = [20,17,35,4,12]
+let filtra_square = nums3.filter{$0 % 2 == 0}.map{$0 * $0}
+print(filtra_square)
+
+
